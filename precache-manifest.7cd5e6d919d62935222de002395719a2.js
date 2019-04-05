@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8cbeb53b6abecbd48547",
+    "revision": "c116c2581f410e484221",
     "url": "/luizalabs-app/static/css/main.7c6458d5.chunk.css"
   },
   {
-    "revision": "8cbeb53b6abecbd48547",
-    "url": "/luizalabs-app/static/js/main.9796b74b.chunk.js"
+    "revision": "c116c2581f410e484221",
+    "url": "/luizalabs-app/static/js/main.2db955cc.chunk.js"
   },
   {
     "revision": "b621a9723c97c78bd3b6",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/luizalabs-app/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "fd557dc95793df1e5a4c26fe88f58d39",
+    "revision": "2c7cbf8ddd7ccae33889bd2e469db12d",
     "url": "/luizalabs-app/index.html"
   }
 ];
