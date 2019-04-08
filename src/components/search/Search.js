@@ -9,6 +9,9 @@ class Search extends Component {
 
   constructor() {
     super();
+    this.state = {
+      dataAddress: null
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,14 +25,22 @@ class Search extends Component {
       jsonpCallback: 'callback',
     }).then(function (response) {
       return response.json()
-    }).then(function (data) {
-      console.log(data)
+    }).then(dataAddress => {
+      this.setState({ dataAddress })
     }).catch(function (error) {
       console.log('parsing failed', error)
     })
+
   }
 
   render() {
+
+    let viewMap;
+
+    if (this.state.dataAddress !== null) {
+      viewMap = <Maps address={this.state.dataAddress} />
+    }
+
     return (
       <div>
         <div className="row justify-content-md-center">
@@ -39,7 +50,7 @@ class Search extends Component {
               <h6>Consultar</h6>
               <form className="form-inline" onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <label className="mx-sm-2">CEP</label>
+                  <label>CEP</label>
                   <InputMask type="text" id="cep " name="cep" mask="99999-999" className="form-control mx-sm-2" />
                 </div>
                 <button className="btn btn-primary">Buscar</button>
@@ -47,7 +58,7 @@ class Search extends Component {
             </div>
           </div>
         </div>
-        <Maps />
+        {viewMap}
       </div>
     );
   }
