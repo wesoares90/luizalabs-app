@@ -1,13 +1,13 @@
 {
-  "main.css": "/luizalabs-app/static/css/main.dce62f80.chunk.css",
-  "main.js": "/luizalabs-app/static/js/main.e29f3939.chunk.js",
-  "main.js.map": "/luizalabs-app/static/js/main.e29f3939.chunk.js.map",
+  "main.css": "/luizalabs-app/static/css/main.f0dcb423.chunk.css",
+  "main.js": "/luizalabs-app/static/js/main.4836621a.chunk.js",
+  "main.js.map": "/luizalabs-app/static/js/main.4836621a.chunk.js.map",
   "runtime~main.js": "/luizalabs-app/static/js/runtime~main.3b8a8105.js",
   "runtime~main.js.map": "/luizalabs-app/static/js/runtime~main.3b8a8105.js.map",
-  "static/js/2.5db26da1.chunk.js": "/luizalabs-app/static/js/2.5db26da1.chunk.js",
-  "static/js/2.5db26da1.chunk.js.map": "/luizalabs-app/static/js/2.5db26da1.chunk.js.map",
+  "static/js/2.7980eacb.chunk.js": "/luizalabs-app/static/js/2.7980eacb.chunk.js",
+  "static/js/2.7980eacb.chunk.js.map": "/luizalabs-app/static/js/2.7980eacb.chunk.js.map",
   "index.html": "/luizalabs-app/index.html",
-  "precache-manifest.421e9fae2e646b8c89eb4b84428c120f.js": "/luizalabs-app/precache-manifest.421e9fae2e646b8c89eb4b84428c120f.js",
+  "precache-manifest.e5996064d84783eea6c89c30c7371664.js": "/luizalabs-app/precache-manifest.e5996064d84783eea6c89c30c7371664.js",
   "service-worker.js": "/luizalabs-app/service-worker.js",
-  "static/css/main.dce62f80.chunk.css.map": "/luizalabs-app/static/css/main.dce62f80.chunk.css.map"
+  "static/css/main.f0dcb423.chunk.css.map": "/luizalabs-app/static/css/main.f0dcb423.chunk.css.map"
 }
