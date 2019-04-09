@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import './Maps.scss';
+import GoogleMapReact from 'google-map-react';
+
+const apiKey =  'AIzaSyDeQ0Td3ryfHSrEP2_1KAytnkyLPsUvmdQ';
+const Marker = () => (
+  <div className="marker"></div>
+);
 
 class Maps extends Component {
+  
+  static defaultProps = {
+    center: { lat: 59.95, lng: 30.33 },
+    zoom: 11
+  };
   render() {
     if (this.props.address.erro) {
       return (
@@ -22,6 +33,19 @@ class Maps extends Component {
               <span>{this.props.address.bairro}</span>
               <span>{this.props.address.localidade} - {this.props.address.uf}</span>
               <span>{this.props.address.cep}</span>
+              <div className="google-map">
+                <GoogleMapReact
+                  bootstrapURLKeys={{ key: apiKey }}
+                  defaultCenter={this.props.center}
+                  defaultZoom={this.props.zoom}
+                >
+                  <Marker
+                    lat={59.955413}
+                    lng={30.337844}
+                    text={this.props.address.cep}
+                  />
+                </GoogleMapReact>
+              </div>
             </div>
           </div>
         </div>
