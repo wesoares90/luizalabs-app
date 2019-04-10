@@ -29,7 +29,6 @@ class Search extends Component {
     }).then(function (response) {
       return response.json()
     }).then(dataAddress => {
-      console.log(dataAddress)
       this.getLatLon(dataAddress);
     }).catch(function (error) {
       console.log('parsing failed', error)
