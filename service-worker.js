@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/luizalabs-app/precache-manifest.e5996064d84783eea6c89c30c7371664.js"
+  "/luizalabs-app/precache-manifest.cad5c948b472ff150bdaa4be39afd934.js"
 );
 
 workbox.clientsClaim();
