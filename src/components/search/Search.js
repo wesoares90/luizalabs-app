@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import './Search.scss';
 import fetchJsonp from 'fetch-jsonp';
 import InputMask from 'react-input-mask';
-import PropTypes from 'prop-types';
 import Maps from '../maps/Maps';
+
+const apiLatLon = 'https://nominatim.openstreetmap.org/?format=json&addressdetails=1&format=json&limit=1&q='
 
 class Search extends Component {
 
   constructor() {
     super();
     this.state = {
-      dataAddress: null
+      dataAddress: null,
+      lat: null,
+      lng: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -26,11 +29,26 @@ class Search extends Component {
     }).then(function (response) {
       return response.json()
     }).then(dataAddress => {
-      this.setState({ dataAddress })
+      console.log(dataAddress)
+      this.getLatLon(dataAddress);
     }).catch(function (error) {
       console.log('parsing failed', error)
     })
 
+  }
+
+  getLatLon(dataAddress) {
+    fetch(apiLatLon + dataAddress.logradouro)
+      .then(response => response.json())
+      .then(dataLatLon => {
+        this.setState({
+          lat: Number(dataLatLon[0].lat),
+          lng: Number(dataLatLon[0].lon),
+          dataAddress: dataAddress
+        })
+      }).catch(function (error) {
+        console.log('parsing failed', error)
+      })
   }
 
   render() {
@@ -38,7 +56,7 @@ class Search extends Component {
     let viewMap;
 
     if (this.state.dataAddress !== null) {
-      viewMap = <Maps address={this.state.dataAddress} />
+      viewMap = <Maps address={this.state.dataAddress} lat={this.state.lat} lng={this.state.lng} />
     }
 
     return (
@@ -63,17 +81,5 @@ class Search extends Component {
     );
   }
 }
-
-Search.propTypes = {
-  cep: PropTypes.string,
-  logradouro: PropTypes.string,
-  complemento: PropTypes.number,
-  bairro: PropTypes.string,
-  localidade: PropTypes.string,
-  uf: PropTypes.string,
-  unidade: PropTypes.number,
-  ibge: PropTypes.number,
-  gia: PropTypes.number
-};
 
 export default Search;

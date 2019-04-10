@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import './Maps.scss';
 import GoogleMapReact from 'google-map-react';
 
-const apiKey =  'AIzaSyDeQ0Td3ryfHSrEP2_1KAytnkyLPsUvmdQ';
 const Marker = () => (
   <div className="marker"></div>
 );
 
 class Maps extends Component {
-  
-  static defaultProps = {
-    center: { lat: 59.95, lng: 30.33 },
-    zoom: 11
-  };
   render() {
     if (this.props.address.erro) {
       return (
         <div className="row justify-content-md-center">
           <div className="col-md-6">
             <div className="content-map">
-              <p>Não foi possivel localizar o endereço digitado.</p>
+              <p>Não foi possivel localizar o endereço através do CEP digitado.</p>
             </div>
           </div>
         </div>
@@ -35,13 +29,13 @@ class Maps extends Component {
               <span>{this.props.address.cep}</span>
               <div className="google-map">
                 <GoogleMapReact
-                  bootstrapURLKeys={{ key: apiKey }}
-                  defaultCenter={this.props.center}
-                  defaultZoom={this.props.zoom}
+                  bootstrapURLKeys={{ key: 'AIzaSyDeQ0Td3ryfHSrEP2_1KAytnkyLPsUvmdQ' }}
+                  defaultCenter={{ lat: this.props.lat, lng: this.props.lng }}
+                  defaultZoom={18}
                 >
                   <Marker
-                    lat={59.955413}
-                    lng={30.337844}
+                    lat={this.props.lat}
+                    lng={this.props.lng}
                     text={this.props.address.cep}
                   />
                 </GoogleMapReact>
